@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeuraConnect Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
+</head>
+<body>
+  <main class="dashboard-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">NeuraConnect</p>
+        <h1>Chatbot Dashboard</h1>
+        <p class="subtitle">A simple view of real interactions stored in SQLite.</p>
+      </div>
+      <a class="secondary-button dashboard-link" href="{{ url_for('index') }}">Back to chatbot</a>
+    </header>
+    <p id="dashboard-error" class="error-status" role="alert" hidden></p>
+    <section class="summary-grid" aria-label="Usage summary">
+      <article class="summary-card"><p>Conversations</p><strong id="total-conversations">—</strong></article>
+      <article class="summary-card"><p>User messages</p><strong id="total-user-messages">—</strong></article>
+      <article class="summary-card"><p>Bot responses</p><strong id="total-assistant-messages">—</strong></article>
+      <article class="summary-card"><p>Average confidence</p><strong id="average-confidence">—</strong></article>
+    </section>
+    <section class="dashboard-grid">
+      <article class="dashboard-card"><h2>Intent distribution</h2><div id="intent-distribution"></div></article>
+      <article class="dashboard-card"><h2>Sentiment distribution</h2><div id="sentiment-distribution"></div></article>
+      <article class="dashboard-card"><h2>Most used FAQs</h2><div id="faq-usage"></div></article>
+      <article class="dashboard-card"><h2>Recent conversations</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Messages</th><th>Latest intent</th><th>Latest message</th></tr></thead><tbody id="recent-conversations"></tbody></table></div></article>
+    </section>
+  </main>
+</body>
+</html>

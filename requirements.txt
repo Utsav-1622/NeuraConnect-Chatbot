@@ -1,0 +1,5 @@
+Flask
+NLTK
+transformers
+torch
+pytest

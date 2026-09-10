@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeuraConnect Support</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/chat.js') }}" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">NeuraConnect</p>
+        <h1>Customer Support Assistant</h1>
+        <p class="subtitle">Ask about orders, delivery, returns, refunds, or your account.</p>
+      </div>
+      <button id="reset-button" class="secondary-button" type="button">New conversation</button>
+    </header>
+    <section class="chat-panel" aria-label="Customer support conversation">
+      <div id="chat-history" class="chat-history" role="log" aria-live="polite" aria-relevant="additions">
+        <article class="message assistant-message welcome-message">
+          <p class="message-label">Support assistant</p>
+          <p>Hello! How can I help you today?</p>
+        </article>
+      </div>
+      <p id="loading-status" class="loading-status" role="status" hidden>Finding the best answer…</p>
+      <p id="error-status" class="error-status" role="alert" hidden></p>
+      <form id="chat-form" class="chat-form">
+        <label class="sr-only" for="message-input">Your support question</label>
+        <textarea id="message-input" name="message" rows="2" maxlength="1000" placeholder="Type your question…" required></textarea>
+        <button id="send-button" class="primary-button" type="submit">Send</button>
+      </form>
+      <p class="keyboard-hint">Press Enter to send. Use Shift + Enter for a new line.</p>
+    </section>
+  </main>
+</body>
+</html>
